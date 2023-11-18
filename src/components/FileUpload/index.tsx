@@ -42,9 +42,7 @@ const FileUpload = () => {
   }, []);
 
   const handleOnFail = useCallback((message: string) => {
-    // setSelectedFiles([]);
     setServerUploadProgress(undefined);
-    // setBrowserUploadProgress({});
     setServerSuccessMessage(undefined);
     setErrorMessage(message || "Something went wrong!");
     setServerUploadRequestRef(undefined);
