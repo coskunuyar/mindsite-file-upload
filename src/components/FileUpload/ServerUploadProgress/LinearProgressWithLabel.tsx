@@ -14,7 +14,10 @@ const LinearProgressWithLabel = (props: LinearProgressWithLabelProps) => {
   const isFinished = useMemo(() => props.value === 100, [props.value]);
 
   return (
-    <Box sx={{ display: "flex", alignItems: "center" }}>
+    <Box
+      sx={{ display: "flex", alignItems: "center" }}
+      data-testid="linear-progress-with-label"
+    >
       <Box sx={{ width: "100%", mr: 1 }}>
         {isFinished && <LinearProgress />}
         {!isFinished && <LinearProgress variant="determinate" {...props} />}

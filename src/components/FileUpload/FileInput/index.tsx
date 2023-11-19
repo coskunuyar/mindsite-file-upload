@@ -36,6 +36,7 @@ const FileInput: React.FC<FileInputProps> = ({
     <div>
       <input
         id="file-upload-input"
+        data-testid="file-upload-input"
         type="file"
         multiple
         onChange={onFileInputChange}

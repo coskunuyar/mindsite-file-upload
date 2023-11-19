@@ -11,7 +11,11 @@ const ErrorMessage: React.FC<ErrorMessageProps> = ({ message, onTryAgain }) => {
   return (
     <Grid container spacing={2} style={{ textAlign: "center" }}>
       <Grid item xs={12}>
-        <ErrorOutlineOutlined color="error" style={{ fontSize: "4rem" }} />
+        <ErrorOutlineOutlined
+          color="error"
+          style={{ fontSize: "4rem" }}
+          data-testid="error-icon"
+        />
       </Grid>
       <Grid item xs={12}>
         <Typography variant="subtitle1" color="text.secondary">

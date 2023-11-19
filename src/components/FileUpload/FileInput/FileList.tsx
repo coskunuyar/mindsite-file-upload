@@ -26,7 +26,7 @@ const FileList: React.FC<FileListInputProps> = ({
   if (selectedFiles.length === 0) return <></>;
 
   return (
-    <div style={{ marginTop: "1rem" }}>
+    <div style={{ marginTop: "1rem" }} data-testid="file-list">
       <Typography variant="h6" gutterBottom>
         Selected Files:
       </Typography>
@@ -50,6 +50,7 @@ const FileList: React.FC<FileListInputProps> = ({
               secondary={`${browserUploadProgress[file.name]}%`}
             />
             <Button
+              data-testid="remove-file-button"
               variant="outlined"
               color="error"
               onClick={() => removeFile(index)}

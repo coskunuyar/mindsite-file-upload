@@ -14,7 +14,11 @@ const ServerUploadSuccessMessage: React.FC<ServerUploadSuccessMessageProps> = ({
   return (
     <Grid container spacing={2} style={{ textAlign: "center" }}>
       <Grid item xs={12}>
-        <CheckCircleOutlined color="success" style={{ fontSize: "4rem" }} />
+        <CheckCircleOutlined
+          color="success"
+          style={{ fontSize: "4rem" }}
+          data-testid="success-icon"
+        />
       </Grid>
       <Grid item xs={12}>
         {message.split("\n").map((line, index) => (

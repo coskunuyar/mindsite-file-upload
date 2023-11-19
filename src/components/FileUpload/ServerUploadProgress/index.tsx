@@ -11,7 +11,7 @@ const ServerUploadProgress: React.FC<ServerUploadProgressProps> = ({
   uploadProgress,
   cancelUpload,
 }) => {
-  if (!uploadProgress || uploadProgress! === 0) return <></>;
+  if (!uploadProgress && uploadProgress !== 0) return <></>;
 
   return (
     <Grid container spacing={2} style={{ marginTop: "1rem" }}>
