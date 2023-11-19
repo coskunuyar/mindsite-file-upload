@@ -5,6 +5,7 @@ import FileInput from "./FileInput";
 import ServerUploadProgress from "./ServerUploadProgress";
 import ServerUploadSuccessMessage from "./ServerUploadSuccessMessage";
 import ErrorMessage from "./ErrorMessage";
+import { v4 as uuidv4 } from "uuid";
 
 const FileUpload = () => {
   const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
@@ -54,15 +55,20 @@ const FileUpload = () => {
         const files: FileList | null = e.target.files;
 
         if (files) {
-          const filesArray = Array.from(files);
+          const filesArray = Array.from(files).map((file) => {
+            const randomId = uuidv4();
+            const fileNameWithId = `${randomId}_${file.name}`;
+            return new File([file], fileNameWithId, { type: file.type });
+          });
+
           setSelectedFiles([...selectedFiles, ...filesArray]);
 
-          for (const file of filesArray) {
+          filesArray.forEach((file) => {
             setBrowserUploadProgress((prevProgress) => ({
               ...prevProgress,
               [file.name]: 0,
             }));
-          }
+          });
 
           processFiles(filesArray);
         }
