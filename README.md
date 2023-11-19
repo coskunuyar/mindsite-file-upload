@@ -1,9 +1,13 @@
 # File Upload Component
 
-### yarn install
+## Starting
 
-### yarn dev
+#### yarn install
 
-### yarn test
+#### yarn dev
 
-### visit http://localhost:5173/
+#### visit http://localhost:5173/
+
+## Testing
+
+#### yarn test
